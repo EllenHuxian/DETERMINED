@@ -1,9 +1,17 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>DETERMINED</title>
+    <!-- PWA Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="DETERMINED">
+    <meta name="theme-color" content="#050505">
+    <link rel="manifest" href="manifest.json">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,6 +20,9 @@
         body {
             font-family: 'Inter', sans-serif;
             background-color: #050505;
+            /* Support for the iPhone notch/safe areas */
+            padding-top: env(safe-area-inset-top);
+            padding-bottom: env(safe-area-inset-bottom);
         }
         .glass-panel {
             background: rgba(15, 15, 18, 0.7);
@@ -25,6 +36,10 @@
         }
         .animate-float {
             animation: float 3s ease-in-out infinite;
+        }
+        /* Hide scrollbars for a cleaner app feel */
+        ::-webkit-scrollbar {
+            display: none;
         }
     </style>
 <script type="importmap">
